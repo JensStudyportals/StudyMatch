@@ -27,7 +27,10 @@ $(document).ready(function(){
                             });
                         });
 
-                        var disciplineContext = {title: "test",
+                        var disciplineSource = $("#disciplines-template").html();
+	                    var template = Handlebars.compile(disciplineSource);
+
+                        var disciplineContext = {title: "Disciplines",
                             disciplines: HeadDsiciplines};
                         var discHtml = template(disciplineContext);
 
@@ -59,28 +62,21 @@ $(document).ready(function(){
                         });
                     });
 
-                    alert(SubDisciplines[0].name);
+                    //alert(SubDisciplines[0].name);
 
-                    //var disciplineContext = {title: "test",
-                    //    disciplines: SubDisciplines};
-                    //var discHtml = template(disciplineContext);
-                    //
-                    //$('#sub-disciplines-placeholder').html( discHtml);
-                    //
-                    //$('#sub-discipline-list li').click(function(data){
-                    //
-                    //
-                    //});
+                    var subDisciplineSource = $("#sub-disciplines-template").html();
+                    var template = Handlebars.compile(subDisciplineSource);
+
+                    var subDisciplineContext = {title: "Sub Disciplines",
+                            subdisciplines: SubDisciplines};
+                    var subDiscHtml = template(subDisciplineContext);
+
+                    $('#sub-disciplines-placeholder').html( subDiscHtml);
                 }
             });
 
         }
     };
-
-
-    //StudyMatch.getHeadDicsiplines();
-    //StudyMatch.getSubDisciplinesFromHeadDisciplines();
-
 
     var $showMoreButton = $('#showAllCountries');
 
@@ -99,12 +95,6 @@ $(document).ready(function(){
 		}
 	});
 
-	var disciplineSource = $("#disciplines-template").html();
-	var template = Handlebars.compile(disciplineSource);
-
-	//alert(StudyMatch.getHeadDicsiplines());
-
-	//var disciplines = [{name: 'test1'}, {name: 'test2'}, {name: 'test3'}];
     StudyMatch.getHeadDicsiplines();
 
 
