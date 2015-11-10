@@ -11,30 +11,29 @@
 </head>
 <body>
 
-<div id="headerMenu" class="row">
-  <div class="large-12 columns noPadding">
-    <header>
-     <div class="row">
-       <div class="small-2 columns">
-         <h1>StudyMatch</h1>
+  <div id="headerMenu" class="row">
+    <div class="large-12 columns noPadding">
+      <header>
+       <div class="row">
+         <div class="small-2 columns">
+           <h1>StudyMatch</h1>
+         </div>
+         <div class="small-10 columns">
+           <ul id="menu">
+             <li data-scrollTo="Disciplines">Disciplines</li>
+             <li data-scrollTo="SubDisciplines">Sub-disciplines</li>
+             <li data-scrollTo="Countries">Countries</li>
+             <li data-scrollTo="Cities">Cities</li>
+             <li data-scrollTo="Studies">Studies</li>
+             <li></li>
+           </ul>
+         </div>
        </div>
-       <div class="small-10 columns">
-         <ul id="menu">
-           <li data-scrollTo="Disciplines">Disciplines</li>
-           <li data-scrollTo="SubDisciplines">Sub-disciplines</li>
-           <li data-scrollTo="Countries">Countries</li>
-           <li data-scrollTo="Cities">Cities</li>
-           <li data-scrollTo="Studies">Studies</li>
-           <li></li>
-         </ul>
-       </div>
-     </div>
-
-    </header>
-
+      </header>
+    </div>
   </div>
-</div>
 
+<<<<<<< Updated upstream
 
 
 <div class="row wrapper">
@@ -88,65 +87,102 @@
             <li>hoi</li>
             <li>hoi</li>
             <li>hoi</li>
+=======
+  <div id="disciplines-placeholder"></div>
+>>>>>>> Stashed changes
 
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
+  <div id="subdisciplines-placeholder"></div>
 
-      <a href="" id="showAllCountries">Show all cities</a>
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Sub disciplines</h1>
 
-          <a href="" id="showAllCountries">Show more</a>
+      <ul class="small-block-grid-5">
+        <h2 class="discipline">Discipline 1</h2>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+      </ul>
 
-          <ul id="allCountries" class="small-block-grid-4 Hidden">
-            <h3>All countries</h3>
+      <ul class="small-block-grid-5">
+        <h2 class="discipline">Discipline 2</h2>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+      </ul>
 
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-          </ul>
-        </div>
+      <ul class="small-block-grid-5">
+        <h2 class="discipline">Discipline 3</h2>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+        <li>subdiscipline</li>
+      </ul>
+    </div>
+  </div>
 
 
-      </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Countries</h1>
+      <ul class="small-block-grid-4">
+        <h2>Top 10 countries</h2>
 
-      <div id="Cities" class="row page">
-        <div class="large-12 columns">
-          <h2>Cities</h2>
-          <ul class="small-block-grid-4">
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
 
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
 
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-          </ul>
-        </div>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+      </ul>
+
+      <a href="" id="showAllCountries">Show all countries</a>
+
+      <div id="allCountries">
+        <h2>All countries</h2>
+        <ul class="small-block-grid-4 Hidden">
+          <li>hoi</li>
+        </ul>
       </div>
     </div>
   </div>
 
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Cities</h1>
+      <ul class="small-block-grid-4">
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+        <li>hoi</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TEMPLATES -->
+
   <script id="disciplines-template" type="text/x-handlebars-template">
-    <div class="row">
+    <div id="Disciplines" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
         <ul id="head-discipline-list" class="small-block-grid-5">
@@ -157,6 +193,27 @@
       </div>
     </div>
   </script>
+
+  <script id="subdisciplines-template" type="text/x-handlebars-template">
+    <div id="SubDisciplines" class="row">
+      <div class="large-12 columns">
+        <h1>Sub disciplines</h1>
+        {{#each subdisciplines}}
+          <h2 class="discipline">{{title}}</h2>
+
+          <ul class="small-block-grid-5">
+            {{#each subDisciplinesArray}}
+              <li>{{subDisciplineName}}</li>
+            {{/each}}
+          </ul>
+        {{/each}}
+      </div>
+    </div>
+  </script>
+
+
+
+
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>

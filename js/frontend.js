@@ -11,10 +11,10 @@ $(document).ready(function() {
 
 		$countryList.toggle('slow');
 
-		if($showMoreButton.text() == 'Show all cities'){
-			$(this).text('Hide all cities');
+		if($showMoreButton.text() == 'Show all countries'){
+			$(this).text('Hide all countries');
 		} else {
-			$(this).text('Show all cities');
+			$(this).text('Show all countries');
 		}
 	});
 
@@ -28,6 +28,7 @@ $(document).ready(function() {
 	});
 
 
+<<<<<<< Updated upstream
 	//var disciplineSource = $("#disciplines-template").html();
 	//var template = Handlebars.compile(disciplineSource);
 	//
@@ -37,4 +38,12 @@ $(document).ready(function() {
 	//
 	//$('#disciplines-placeholder').html( discHtml);
 
+=======
+	var disciplineSource = $("#disciplines-template").html();
+	var template = Handlebars.compile(disciplineSource);
+
+	var disciplineContext = {title: "test",
+		disciplines: [{name:"test1"},{name:"test2"}, {name:"test3"}]};
+	var disciplineHtml = template(disciplineContext);
+>>>>>>> Stashed changes
 });
