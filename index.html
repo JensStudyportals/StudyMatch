@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/foundation.css" />
   <link rel="stylesheet" href="css/app.css">
   <script src="js/vendor/modernizr.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 </head>
 <body>
 
@@ -18,30 +19,9 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <h1>Disciplines</h1>
-      <ul class="small-block-grid-5">
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
+  <div id="disciplines-placeholder"></div>
 
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
 
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
-        <li>Discipline</li>
-      </ul>
-    </div>
-  </div>
 
   <div class="row">
     <div class="large-12 columns">
@@ -96,7 +76,7 @@
         <li>hoi</li>
       </ul>
 
-      <a href="" id="showAllCountries">Show more</a>
+      <a href="" id="showAllCountries">Show all cities</a>
 
       <ul id="allCountries" class="small-block-grid-4 Hidden">
         <h2>All countries</h2>
@@ -142,6 +122,19 @@
       </ul>
     </div>
   </div>
+
+  <script id="disciplines-template" type="text/x-handlebars-template">
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>{{title}}</h1>
+        <ul class="small-block-grid-5">
+          {{#each disciplines}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </script>
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
