@@ -10,6 +10,10 @@ body *{
   padding: 0 !important;
 }
 
+[class*="block-grid-"] {
+  margin: 0;
+}
+
 #headerMenu.row{
   max-width: 100%;
   position: fixed;
