@@ -46,4 +46,8 @@ body *{
 #menu li:hover{
   border-bottom: 1px dotted #f9461c;
 }
+
+li.selected {
+  border: 1px solid black;
+}
 /*# sourceMappingURL=app.css.map */

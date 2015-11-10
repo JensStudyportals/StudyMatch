@@ -27,21 +27,8 @@ $(document).ready(function() {
 		}, 1000);
 	});
 
-
-	//var disciplineSource = $("#disciplines-template").html();
-	//var template = Handlebars.compile(disciplineSource);
-	//
-	//var disciplineContext = {title: "test",
-	//	disciplines: [{name:"test1"},{name:"test2"}, {name:"test3"}]};
-	//var discHtml = template(disciplineContext);
-	//
-	//$('#disciplines-placeholder').html( discHtml);
-
-
-	var disciplineSource = $("#disciplines-template").html();
-	var template = Handlebars.compile(disciplineSource);
-
-	var disciplineContext = {title: "test",
-		disciplines: [{name:"test1"},{name:"test2"}, {name:"test3"}]};
-	var disciplineHtml = template(disciplineContext);
+	$(document).on('click', 'li', function() {
+		$(this).toggleClass("selected");
+		$(this).siblings().removeClass("selected");
+	});
 });
