@@ -3,9 +3,9 @@ $(document).ready(function(){
     var StudyMatch = {
 
         headDiscipline: null,
-        subDisciplines: [],
-        countries: [],
-        cities: [],
+        subDisciplines: null,
+        countries: null,
+        cities: null,
         studies: [],
 
 
@@ -109,18 +109,18 @@ $(document).ready(function(){
 
                     $('#countries-list li').click(function(){
 
-                            StudyMatch.getCities();
+                            StudyMatch.getCities(this.id);
                         });
                 }
             });
         },
 
-        getCities: function(){
+        getCities: function(id){
 
             var Cities = [];
 
             $.ajax({
-                url: "http://sl5.hackathon.studyportals.xyz/data/cities/any/list/?length=15",
+                url: "http://sl5.hackathon.studyportals.xyz/data/cities/any/list/?q=ci-" + id,
                 async: false,
                 dataType: 'json',
                 success: function(data) {
