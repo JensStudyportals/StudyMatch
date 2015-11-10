@@ -3,9 +3,9 @@ $(document).ready(function(){
     var StudyMatch = {
 
         headDiscipline: null,
-        subDisciplines: [],
-        countries: [],
-        cities: [],
+        subDisciplines: null,
+        countries: null,
+        cities: null,
         studies: [],
 
 
@@ -39,6 +39,7 @@ $(document).ready(function(){
                         $('#head-discipline-list li').click(function(){
 
                             StudyMatch.getSubDisciplinesFromHeadDisciplines(this.id);
+                            StudyMatch.headDiscipline = this.id;
                         });
                     }
                 });
@@ -74,6 +75,7 @@ $(document).ready(function(){
                      $('#sub-disciplines-list li').click(function(){
 
                             StudyMatch.getCountries();
+                            StudyMatch.subDisciplines = this.id;
                         });
                 }
             });
@@ -109,18 +111,19 @@ $(document).ready(function(){
 
                     $('#countries-list li').click(function(){
 
-                            StudyMatch.getCities();
-                        });
+                        StudyMatch.getCities(this.id);
+                        StudyMatch.countries = this.id;
+                    });
                 }
             });
         },
 
-        getCities: function(){
+        getCities: function(id){
 
             var Cities = [];
 
             $.ajax({
-                url: "http://sl5.hackathon.studyportals.xyz/data/cities/any/list/?length=15",
+                url: "http://sl5.hackathon.studyportals.xyz/data/cities/any/list/?q=ci-" + id,
                 async: false,
                 dataType: 'json',
                 success: function(data) {
@@ -141,6 +144,44 @@ $(document).ready(function(){
                     var citiesHtml = template(citiesContext);
 
                     $('#cities-placeholder').html( citiesHtml);
+
+                    $('#cities-list li').click(function(){
+
+                        StudyMatch.cities = this.id;
+                        StudyMatch.getStudies();
+                    });
+                }
+            });
+        },
+
+        getStudies: function() {
+
+            var Studies = [];
+
+            $.ajax({
+                url: "http://sl5.hackathon.studyportals.xyz/data/studies/all/?q=di-" + StudyMatch.subDisciplines + "|ti-" + StudyMatch.cities,
+                async: false,
+                dataType: 'json',
+                success: function (data) {
+
+                    $.each(data, function (key, val) {
+
+                        Studies.push({
+                            id: val.id,
+                            name: val.name
+                        });
+                    });
+
+                    var studiesSource = $("#studies-template").html();
+                    var template = Handlebars.compile(studiesSource);
+
+                    var studiesContext = {
+                        title: "Studies",
+                        study: Studies
+                    };
+                    var studiesHtml = template(studiesContext);
+
+                    $('#studies-placeholder').html(studiesHtml);
                 }
             });
         }

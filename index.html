@@ -49,6 +49,8 @@
   <div id="cities-placeholder"></div>
 </div>
 
+  <div id="studies-placeholder"></div>
+
   <!-- TEMPLATES -->
 
   <script id="disciplines-template" type="text/x-handlebars-template">
@@ -78,7 +80,7 @@
   </script>
 
   <script id="countries-template" type="text/x-handlebars-template">
-    <div id="countries" class="row">
+    <div id="Countries" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
         <ul id="countries-list" class="small-block-grid-5">
@@ -91,11 +93,24 @@
   </script>
 
    <script id="cities-template" type="text/x-handlebars-template">
-    <div id="cities" class="row">
+    <div id="Cities" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
         <ul id="cities-list" class="small-block-grid-5">
           {{#each city}}
+            <li id="{{id}}">{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </script>
+
+  <script id="studies-template" type="text/x-handlebars-template">
+    <div id="Studies" class="row">
+      <div class="large-12 columns">
+        <h1>{{title}}</h1>
+        <ul id="studies-list" class="small-block-grid-5">
+          {{#each study}}
             <li id="{{id}}">{{name}}</li>
           {{/each}}
         </ul>
