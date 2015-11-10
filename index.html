@@ -34,94 +34,21 @@
   </div>
 
 <div class="row wrapper">
+
+  <div class="row">
     <div class="small-12 columns">
+      <p>Intro text</p>
+    </div>
+  </div>
 
-      <div class="row">
-        <div class="small-12 columns">
-          <p>Intro text</p>
-        </div>
-      </div>
-
-      <div id="disciplines-placeholder"></div>
-
-      <div id="SubDisciplines" class="row page">
-        <div class="large-12 columns">
-          <h2>Sub disciplines</h2>
-
-          <ul class="small-block-grid-5">
-            <h3 class="discipline">Discipline 1</h3>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-          </ul>
-
-          <ul class="small-block-grid-5">
-            <h3 class="discipline">Discipline 2</h3>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-          </ul>
-
-          <ul class="small-block-grid-5">
-            <h3 class="discipline">Discipline 3</h3>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-            <li>subdiscipline</li>
-          </ul>
-        </div>
-      </div>
-
-      <div id="Countries" class="row page">
-        <div class="large-12 columns">
-          <h2>Countries</h2>
-          <ul class="small-block-grid-4">
-            <h3>Top 10 countries</h3>
-
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
-            <li>hoi</li>
   <div id="disciplines-placeholder"></div>
 
   <div id="subdisciplines-placeholder"></div>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <h1>Sub disciplines</h1>
-
-      <ul class="small-block-grid-5">
-        <h2 class="discipline">Discipline 1</h2>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-      </ul>
-
-      <ul class="small-block-grid-5">
-        <h2 class="discipline">Discipline 2</h2>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-      </ul>
-
-      <ul class="small-block-grid-5">
-        <h2 class="discipline">Discipline 3</h2>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-        <li>subdiscipline</li>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="row">
+  <div class="row" id="countries">
     <div class="large-12 columns">
       <h1>Countries</h1>
+
       <ul class="small-block-grid-4">
         <h2>Top 10 countries</h2>
 
@@ -152,7 +79,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" id="cities">
     <div class="large-12 columns">
       <h1>Cities</h1>
       <ul class="small-block-grid-4">
@@ -196,7 +123,7 @@
         {{#each subdisciplines}}
           <h2 class="discipline">{{title}}</h2>
 
-          <ul class="small-block-grid-5">
+          <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
             {{#each subDisciplinesArray}}
               <li>{{subDisciplineName}}</li>
             {{/each}}
@@ -205,10 +132,6 @@
       </div>
     </div>
   </script>
-
-
-
-
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
