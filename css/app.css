@@ -24,6 +24,9 @@ body *{
 #headerMenu header h1{
   color: #fff;
   font-size: 1.75em;
+  font-weight: bold;
+  letter-spacing: -2px;
+  text-rendering: optimizeLegibility;
 }
 
 .wrapper{
@@ -45,5 +48,15 @@ body *{
 
 #menu li:hover{
   border-bottom: 1px dotted #f9461c;
+}
+
+.small-block-grid-4, .small-block-grid-5{
+  margin: 0 0!important;
+}
+
+.page li {
+  float: left;
+  list-style: none;
+  padding: 0 0.5em;
 }
 /*# sourceMappingURL=app.css.map */
