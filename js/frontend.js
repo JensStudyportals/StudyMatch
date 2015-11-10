@@ -17,6 +17,16 @@ $(document).ready(function() {
 		}
 	});
 
+	$('#menu li').click(function(){
+
+		var scrollTo = $(this).attr('data-scrollTo');
+
+		$('html, body').animate({
+			scrollTop: $('#'+scrollTo).offset().top
+		}, 1000);
+	});
+
+
 	var disciplineSource = $("#disciplines-template").html();
 	var template = Handlebars.compile(disciplineSource);
 
