@@ -106,6 +106,41 @@ $(document).ready(function(){
                     var countriesHtml = template(countriesContext);
 
                     $('#countries-placeholder').html( countriesHtml);
+
+                    $('#countries-list li').click(function(){
+
+                            StudyMatch.getCities();
+                        });
+                }
+            });
+        },
+
+        getCities: function(){
+
+            var Cities = [];
+
+            $.ajax({
+                url: "http://sl5.hackathon.studyportals.xyz/data/cities/any/list/?length=15",
+                async: false,
+                dataType: 'json',
+                success: function(data) {
+
+                    $.each(data, function(key, val){
+
+                        Cities.push({
+                            id: val.id,
+                            name: val.name
+                        });
+                    });
+
+                    var citiesSource = $("#cities-template").html();
+                    var template = Handlebars.compile(citiesSource);
+
+                    var citiesContext = {title: "Cities",
+                            city: Cities};
+                    var citiesHtml = template(citiesContext);
+
+                    $('#cities-placeholder').html( citiesHtml);
                 }
             });
         }

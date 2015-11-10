@@ -47,27 +47,7 @@
 
   <div id="countries-placeholder"></div>
 
-  <div class="row" id="cities">
-    <div class="large-12 columns">
-      <h1>Cities</h1>
-      <ul class="small-block-grid-4">
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-      </ul>
-    </div>
-  </div>
+  <div id="cities-placeholder"></div>
 
   <!-- TEMPLATES -->
 
@@ -103,6 +83,19 @@
         <h1>{{title}}</h1>
         <ul id="countries-list" class="small-block-grid-5">
           {{#each country}}
+            <li id="{{id}}">{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </script>
+
+   <script id="cities-template" type="text/x-handlebars-template">
+    <div id="cities" class="row">
+      <div class="large-12 columns">
+        <h1>{{title}}</h1>
+        <ul id="cities-list" class="small-block-grid-5">
+          {{#each city}}
             <li id="{{id}}">{{name}}</li>
           {{/each}}
         </ul>
