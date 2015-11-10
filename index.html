@@ -45,39 +45,7 @@
 
   <div id="sub-disciplines-placeholder"></div>
 
-  <div class="row" id="countries">
-    <div class="large-12 columns">
-      <h1>Countries</h1>
-
-      <ul class="small-block-grid-4">
-        <h2>Top 10 countries</h2>
-
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-        <li>hoi</li>
-      </ul>
-
-      <a href="" id="showAllCountries">Show all countries</a>
-
-      <div id="allCountries">
-        <h2>All countries</h2>
-        <ul class="small-block-grid-4 Hidden">
-          <li>hoi</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <div id="countries-placeholder"></div>
 
   <div class="row" id="cities">
     <div class="large-12 columns">
@@ -122,6 +90,19 @@
         <h1>{{title}}</h1>
         <ul id="sub-disciplines-list" class="small-block-grid-5">
           {{#each subdisciplines}}
+            <li id="{{id}}">{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </script>
+
+  <script id="countries-template" type="text/x-handlebars-template">
+    <div id="countries" class="row">
+      <div class="large-12 columns">
+        <h1>{{title}}</h1>
+        <ul id="countries-list" class="small-block-grid-5">
+          {{#each country}}
             <li id="{{id}}">{{name}}</li>
           {{/each}}
         </ul>

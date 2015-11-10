@@ -62,8 +62,6 @@ $(document).ready(function(){
                         });
                     });
 
-                    //alert(SubDisciplines[0].name);
-
                     var subDisciplineSource = $("#sub-disciplines-template").html();
                     var template = Handlebars.compile(subDisciplineSource);
 
@@ -72,9 +70,44 @@ $(document).ready(function(){
                     var subDiscHtml = template(subDisciplineContext);
 
                     $('#sub-disciplines-placeholder').html( subDiscHtml);
+
+                     $('#sub-disciplines-list li').click(function(){
+
+                            StudyMatch.getCountries();
+                        });
                 }
             });
 
+        },
+
+        getCountries: function(){
+
+            var Countries = [];
+
+            $.ajax({
+                url: "http://sl5.hackathon.studyportals.xyz/data/countries/any/list/?length=15",
+                async: false,
+                dataType: 'json',
+                success: function(data) {
+
+                    $.each(data, function(key, val){
+
+                        Countries.push({
+                            id: val.id,
+                            name: val.name
+                        });
+                    });
+
+                    var countriesSource = $("#countries-template").html();
+                    var template = Handlebars.compile(countriesSource);
+
+                    var countriesContext = {title: "Countries",
+                            country: Countries};
+                    var countriesHtml = template(countriesContext);
+
+                    $('#countries-placeholder').html( countriesHtml);
+                }
+            });
         }
     };
 
