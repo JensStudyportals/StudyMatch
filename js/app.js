@@ -43,11 +43,15 @@ $(document).ready(function(){
 
         getSubDisciplinesFromHeadDisciplines: function(){
 
-            $('#sub-discipline-list').remove();
+
+            if($('#sub-discipline-list')){
+
+                $('#sub-discipline-list').remove();
+            }
 
             $("<div/>", {
 
-                id: 'subs',
+                id: 'sub-discipline-list',
             }).appendTo("body");
 
             $.getJSON( "http://sl5.hackathon.studyportals.xyz/data/disciplines/any/details/" + this.headDiscipline + "/subdisciplines/", function( data ) {
@@ -64,7 +68,7 @@ $(document).ready(function(){
                     class: "sub-disciplines",
                     id: 'sub-disciplines',
                     html: items.join( "" )
-                }).appendTo( "#subs" );
+                }).appendTo( "#sub-discipline-list" );
             });
         }
     };
