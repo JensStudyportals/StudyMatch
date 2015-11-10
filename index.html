@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundation | Welcome</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/vendor/modernizr.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+</head>
+<body>
+
+<div id="headerMenu" class="row">
+  <div class="large-12 columns noPadding">
+    <header>
+     <div class="row">
+       <div class="small-2 columns">
+         <h1>StudyMatch</h1>
+       </div>
+       <div class="small-10 columns">
+         <ul id="menu">
+           <li data-scrollTo="Disciplines">Disciplines</li>
+           <li data-scrollTo="SubDisciplines">Sub-disciplines</li>
+           <li data-scrollTo="Countries">Countries</li>
+           <li data-scrollTo="Cities">Cities</li>
+           <li data-scrollTo="Studies">Studies</li>
+           <li></li>
+         </ul>
+       </div>
+     </div>
+
+    </header>
+
+  </div>
+</div>
+
+  <div id="disciplines-placeholder"></div>
+<div class="row wrapper">
+    <div class="small-12 columns">
+
+      <div class="row">
+        <div class="small-12 columns">
+          <p>Intro text</p>
+        </div>
+      </div>
+
+      <div id="Disciplines" class="row page">
+        <div class="large-12 columns">
+          <h2>Disciplines</h2>
+          <ul class="small-block-grid-5">
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+            <li>Discipline</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="SubDisciplines" class="row page">
+        <div class="large-12 columns">
+          <h2>Sub disciplines</h2>
+
+          <ul class="small-block-grid-5">
+            <h3 class="discipline">Discipline 1</h3>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+          </ul>
+
+          <ul class="small-block-grid-5">
+            <h3 class="discipline">Discipline 2</h3>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+          </ul>
+
+          <ul class="small-block-grid-5">
+            <h3 class="discipline">Discipline 3</h3>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+            <li>subdiscipline</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="Countries" class="row page">
+        <div class="large-12 columns">
+          <h2>Countries</h2>
+          <ul class="small-block-grid-4">
+            <h3>Top 10 countries</h3>
+
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+
+      <a href="" id="showAllCountries">Show all cities</a>
+
+          <a href="" id="showAllCountries">Show more</a>
+
+          <ul id="allCountries" class="small-block-grid-4 Hidden">
+            <h3>All countries</h3>
+
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+          </ul>
+        </div>
+
+
+      </div>
+
+      <div id="Cities" class="row page">
+        <div class="large-12 columns">
+          <h2>Cities</h2>
+          <ul class="small-block-grid-4">
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+            <li>hoi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script id="disciplines-template" type="text/x-handlebars-template">
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>{{title}}</h1>
+        <ul class="small-block-grid-5">
+          {{#each disciplines}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </script>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  <script src="js/app.js"></script>
+  <script src="js/frontend.js"></script>
+  </body>
+</html>

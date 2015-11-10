@@ -1,0 +1,49 @@
+body{
+  background-color: #eee;
+}
+
+body *{
+  color: #333333;
+}
+
+.noPadding{
+  padding: 0 !important;
+}
+
+#headerMenu.row{
+  max-width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+#headerMenu header{
+  background-color: #009CDA ;
+  padding: 0 1em;
+}
+
+#headerMenu header h1{
+  color: #fff;
+  font-size: 1.75em;
+}
+
+.wrapper{
+  background-color: #fff;
+  padding-top: 80px;
+}
+
+.Hidden {
+  display: none; }
+
+#menu li{
+  float: left;
+  list-style: none;
+  color: #fff;
+  padding: 0.7em 1em 0.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#menu li:hover{
+  border-bottom: 1px dotted #f9461c;
+}
+/*# sourceMappingURL=app.css.map */
