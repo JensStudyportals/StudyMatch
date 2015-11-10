@@ -40,6 +40,22 @@ $(document).ready(function(){
 
                             StudyMatch.getSubDisciplinesFromHeadDisciplines(this.id);
                             StudyMatch.headDiscipline = this.id;
+
+                            if( $('#Studies')){
+
+                                $('#Studies').remove();
+                            }
+
+                            if( $('#Cities')){
+
+                                $('#Cities').remove();
+                            }
+
+                            if( $('#Countries')){
+
+                                $('#Countries').remove();
+                            }
+
                         });
                     }
                 });
@@ -76,6 +92,16 @@ $(document).ready(function(){
 
                             StudyMatch.getCountries();
                             StudyMatch.subDisciplines = this.id;
+
+                         if( $('#Studies')){
+
+                                $('#Studies').remove();
+                            }
+
+                        if( $('#Cities')){
+
+                            $('#Cities').remove();
+                        }
                         });
                 }
             });
@@ -113,6 +139,12 @@ $(document).ready(function(){
 
                         StudyMatch.getCities(this.id);
                         StudyMatch.countries = this.id;
+
+                        if( $('#Studies')){
+
+                            $('#Studies').remove();
+                        }
+
                     });
                 }
             });
@@ -149,6 +181,7 @@ $(document).ready(function(){
 
                         StudyMatch.cities = this.id;
                         StudyMatch.getStudies();
+
                     });
                 }
             });
