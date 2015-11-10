@@ -11,71 +11,102 @@ $(document).ready(function(){
 
         getHeadDicsiplines: function(){
 
-            var self = this;
+                var HeadDsiciplines = [];
 
-            $.getJSON( "http://sl5.hackathon.studyportals.xyz/data/disciplines/any/top/", function( data ) {
+                $.ajax({
+                    url: "http://sl5.hackathon.studyportals.xyz/data/disciplines/any/top/",
+                    async: false,
+                    dataType: 'json',
+                    success: function(data) {
 
-                var items = [];
+                        $.each(data, function(key, val){
 
-                $.each( data, function( key, val ) {
+                            HeadDsiciplines.push({
+                                id: val.id,
+                                name: val.name
+                            });
+                        });
 
-                    var li = "<li id='" + key + "'>" + val.name + "</li>";
+                        var disciplineContext = {title: "test",
+                            disciplines: HeadDsiciplines};
+                        var discHtml = template(disciplineContext);
 
-                    items.push(li);
+                        $('#disciplines-placeholder').html( discHtml);
+
+                        $('#head-discipline-list li').click(function(){
+
+                            StudyMatch.getSubDisciplinesFromHeadDisciplines(this.id);
+                        });
+                    }
                 });
-
-
-                $( "<ul/>", {
-
-                    class: "head-discipline",
-                    id: 'head-discipline',
-                    html: items.join( "" )
-                }).appendTo( "body" );
-
-                $('#head-discipline li').click(function(){
-
-                    StudyMatch.headDiscipline = this.id;
-                    StudyMatch.getSubDisciplinesFromHeadDisciplines(this.id);
-                });
-            });
-
         },
 
-        getSubDisciplinesFromHeadDisciplines: function(){
+        getSubDisciplinesFromHeadDisciplines: function(discipline_id){
 
+            var SubDisciplines = [];
 
-            if($('#sub-discipline-list')){
+            $.ajax({
+                url: "http://sl5.hackathon.studyportals.xyz/data/disciplines/any/details/" + discipline_id + "/subdisciplines/",
+                async: false,
+                dataType: 'json',
+                success: function(data) {
 
-                $('#sub-discipline-list').remove();
-            }
+                    $.each(data, function(key, val){
 
-            $("<div/>", {
+                        SubDisciplines.push({
+                            id: val.id,
+                            name: val.name
+                        });
+                    });
 
-                id: 'sub-discipline-list',
-            }).appendTo("body");
+                    alert(SubDisciplines[0].name);
 
-            $.getJSON( "http://sl5.hackathon.studyportals.xyz/data/disciplines/any/details/" + this.headDiscipline + "/subdisciplines/", function( data ) {
-
-                var items = [];
-
-                $.each( data, function( key, val ) {
-
-                    items.push( "<li id='" + key + "'>" + val.name + "</li>" );
-                });
-
-                $( "<ul/>", {
-
-                    class: "sub-disciplines",
-                    id: 'sub-disciplines',
-                    html: items.join( "" )
-                }).appendTo( "#sub-discipline-list" );
+                    //var disciplineContext = {title: "test",
+                    //    disciplines: SubDisciplines};
+                    //var discHtml = template(disciplineContext);
+                    //
+                    //$('#sub-disciplines-placeholder').html( discHtml);
+                    //
+                    //$('#sub-discipline-list li').click(function(data){
+                    //
+                    //
+                    //});
+                }
             });
+
         }
     };
 
 
-    StudyMatch.getHeadDicsiplines();
+    //StudyMatch.getHeadDicsiplines();
     //StudyMatch.getSubDisciplinesFromHeadDisciplines();
+
+
+    var $showMoreButton = $('#showAllCountries');
+
+	$showMoreButton.on('click', function (e) {
+
+		e.preventDefault();
+
+		var $countryList = $('#allCountries');
+
+		$countryList.toggle('slow');
+
+		if($showMoreButton.text() == 'Show all cities'){
+			$(this).text('Hide all cities');
+		} else {
+			$(this).text('Show all cities');
+		}
+	});
+
+	var disciplineSource = $("#disciplines-template").html();
+	var template = Handlebars.compile(disciplineSource);
+
+	//alert(StudyMatch.getHeadDicsiplines());
+
+	//var disciplines = [{name: 'test1'}, {name: 'test2'}, {name: 'test3'}];
+    StudyMatch.getHeadDicsiplines();
+
 
 
 
