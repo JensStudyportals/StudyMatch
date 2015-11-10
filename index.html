@@ -54,49 +54,49 @@
   <!-- TEMPLATES -->
 
   <script id="disciplines-template" type="text/x-handlebars-template">
-    <div id="Disciplines" class="row">
+    <section id="Disciplines" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
-        <ul id="head-discipline-list" class="small-block-grid-5">
+        <ul id="head-discipline-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
           {{#each disciplines}}
-            <li id="{{id}}">{{name}}</li>
+            <li id="{{id}}"><div class="liwrapper">{{name}}</div></li>
           {{/each}}
         </ul>
       </div>
-    </div>
+    </section>
   </script>
 
   <script id="sub-disciplines-template" type="text/x-handlebars-template">
-    <div id="SubDisciplines" class="row">
+    <section id="SubDisciplines" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
-        <ul id="sub-disciplines-list" class="small-block-grid-5">
+        <ul id="sub-disciplines-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
           {{#each subdisciplines}}
-            <li id="{{id}}">{{name}}</li>
+            <li id="{{id}}"><div class="liwrapper">{{name}}</div></li>
           {{/each}}
         </ul>
       </div>
-    </div>
+    </section>
   </script>
 
   <script id="countries-template" type="text/x-handlebars-template">
     <div id="Countries" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
-        <ul id="countries-list" class="small-block-grid-5">
+        <ul id="countries-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
           {{#each country}}
-            <li id="{{id}}">{{name}}</li>
+            <li id="{{id}}"><div class="liwrapper">{{name}}</div></li>
           {{/each}}
         </ul>
       </div>
-    </div>
+    </section>
   </script>
 
    <script id="cities-template" type="text/x-handlebars-template">
     <div id="Cities" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
-        <ul id="cities-list" class="small-block-grid-5">
+        <ul id="cities-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
           {{#each city}}
             <li id="{{id}}">{{name}}</li>
           {{/each}}
@@ -111,29 +111,12 @@
         <h1>{{title}}</h1>
         <ul id="studies-list" class="small-block-grid-5">
           {{#each study}}
-            <li id="{{id}}">{{name}}</li>
+            <li id="{{id}}"><div class="liwrapper">{{name}}</div></li>
           {{/each}}
         </ul>
       </div>
-    </div>
+    </section>
   </script>
-
-  <!--<script id="subdisciplines-template" type="text/x-handlebars-template">-->
-    <!--<div id="SubDisciplines" class="row">-->
-      <!--<div class="large-12 columns">-->
-        <!--<h1>Sub disciplines</h1>-->
-        <!--{{#each subdisciplines}}-->
-          <!--<h2 class="discipline">{{title}}</h2>-->
-
-          <!--<ul id='sub-discipline-list' class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">-->
-            <!--{{#each subDisciplinesArray}}-->
-              <!--<li>{{subDisciplineName}}</li>-->
-            <!--{{/each}}-->
-          <!--</ul>-->
-        <!--{{/each}}-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</script>-->
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>

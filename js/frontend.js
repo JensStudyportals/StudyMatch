@@ -27,8 +27,8 @@ $(document).ready(function() {
 		}, 1000);
 	});
 
-	$(document).on('click', 'li', function() {
+	$(document).on('click', '.liwrapper', function() {
+		$(this).parent().siblings().find('.liwrapper').removeClass("selected");
 		$(this).toggleClass("selected");
-		$(this).siblings().removeClass("selected");
 	});
 });

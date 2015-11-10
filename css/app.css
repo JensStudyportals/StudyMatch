@@ -1,5 +1,7 @@
 body{
   background-color: #eee;
+  background: #f2f2f2;
+  background: url(http://merrychristmas.stevezeeuwe.com/wp-content/themes/anew/img/bright_squares.png);
 }
 
 body *{
@@ -14,6 +16,10 @@ body *{
   margin: 0;
 }
 
+[class*="block-grid-"] li {
+  padding: 4px;
+}
+
 #headerMenu.row{
   max-width: 100%;
   position: fixed;
@@ -21,7 +27,7 @@ body *{
 }
 
 #headerMenu header{
-  background-color: #009CDA ;
+  background-color: #009CDA;
   padding: 0 1em;
 }
 
@@ -31,7 +37,6 @@ body *{
 }
 
 .wrapper{
-  background-color: #fff;
   padding-top: 80px;
 }
 
@@ -51,7 +56,23 @@ body *{
   border-bottom: 1px dotted #f9461c;
 }
 
-li.selected {
+.selected {
   border: 1px solid black;
+  background: #009CDA;
+  color: #fff;
+  text-align: center;
+}
+
+section.row {
+  background: white;
+  margin-bottom: 20px;
+  padding: 20px 0;
+
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 3px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 3px 3px rgba(0,0,0,0.05);
+}
+
+.liwrapper {
+
 }
 /*# sourceMappingURL=app.css.map */
