@@ -30,5 +30,6 @@ $(document).ready(function() {
 	$(document).on('click', '.liwrapper', function() {
 		$(this).parent().siblings().find('.liwrapper').removeClass("selected");
 		$(this).toggleClass("selected");
+		$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 	});
 });

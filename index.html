@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foundation | Welcome</title>
+  <title>StudyMatch</title>
   <link rel="stylesheet" href="css/foundation.css" />
   <link rel="stylesheet" href="css/app.css">
   <script src="js/vendor/modernizr.js"></script>
@@ -19,14 +19,7 @@
            <h1>StudyMatch</h1>
          </div>
          <div class="small-10 columns">
-           <ul id="menu">
-             <li data-scrollTo="Disciplines">Disciplines</li>
-             <li data-scrollTo="SubDisciplines">Sub-disciplines</li>
-             <li data-scrollTo="Countries">Countries</li>
-             <li data-scrollTo="Cities">Cities</li>
-             <li data-scrollTo="Studies">Studies</li>
-             <li></li>
-           </ul>
+
          </div>
        </div>
       </header>
@@ -34,11 +27,11 @@
   </div>
 
 <div class="wrapper">
-  <div class="row">
+  <section id="intro" class="row">
     <div class="small-12 columns">
-      <p>Find out what you want to study!</p>
+      <h1>Find out what you want to study!</h1>
     </div>
-  </div>
+  </section>
 
   <div id="disciplines-placeholder"></div>
 
@@ -98,7 +91,7 @@
         <h1>{{title}}</h1>
         <ul id="cities-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
           {{#each city}}
-            <li id="{{id}}">{{name}}</li>
+            <li id="{{id}}"><div class="liwrapper">{{name}}</div></li>
           {{/each}}
         </ul>
       </div>
@@ -109,7 +102,7 @@
     <section id="Studies" class="row">
       <div class="large-12 columns">
         <h1>{{title}}</h1>
-        <ul id="studies-list" class="small-block-grid-5">
+        <ul id="studies-list" class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
           {{#each study}}
             <li id="{{id}}"><div class="liwrapper">{{name}}</div></li>
           {{/each}}
